@@ -45,26 +45,49 @@ header{
     background-color:var(--color-amarillo);
     padding-bottom: 10px;
 }
+.sub-header{
+    width: auto;
+    height: auto;
+    display: flex;
+align-items: center;
+
+
+}
+
 header .logo{
-    width: 135px;
-    height: 50px;
-    display: inline-block;
+    width: 50%;
+    height: 60px;
     margin-top: 30px;
     margin-left: 20px;
 }
+/* header .logo img{
+    width: auto;
+    height: auto;
+} */
+ header .sub-header .search {
+     width: 50%;
+     display: flex;
+     height: 35px;
+    position: relative;
+justify-content: center;
 
-header .search{
-    margin-left: 10px;
-    
-}
-header .icon-search{
-    margin-left: 10px;
-}
+  
+ }
 
-/* consejo del profe para class repetido
-.ml-15{
-    margin-left:15px;
- } */
+header .sub-header .search .input{
+    border-radius: 5px;
+    border: inherit; 
+    width: 130px;
+} 
+
+header .sub-header .search .icon-search{
+    position: relative;
+    border: inherit;
+    right: 10px;
+    background-color: white;
+    border-radius: 5px;
+
+}
 
 header p{
     text-align: center;
@@ -105,6 +128,8 @@ main h2{
 }
 main article{
     margin-bottom: 10px;
+    position: relative;
+
 }
 main article img{
 margin: auto;
@@ -113,7 +138,11 @@ width: 100%;
 main article .box-detail{
     background-color: white;
     border-top: solid 1px #ebebeb;
-    padding: 15px
+    padding: 15px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items:flex-end;
 }
 main article div i{
     font-size: 15px;
@@ -121,20 +150,27 @@ main article div i{
     color:var(--color-verde);
     border-radius: 50%;
     padding: 10px;
-    
+    position: absolute;
+    left:80%;
+    bottom: 65px;
 }
 main article div p{
+    
     font-size: var(--font-tamaño-precios);
+   width: 30%;
 }
 main article div .dto{
+    width: 70%;
+    text-align: left;
+    position: relative;
     color: var(--color-verde);
     font-size: var(--font-tamaño-dtos-desc);
-    margin-bottom: 15px;
 }
 main article div h3{
-    display: none;
     opacity: 0.4;
-}
+    width: 100%;
+    margin: 15px 0 0 0
+} 
 
 footer{
 text-align: center;
@@ -164,23 +200,105 @@ footer section p{
 
 /* tablet */
 @media (min-width: 361px) {
-    header nav{
-        display:block
-        }
-    main article{
-        box-shadow: 0 0 10px rgb(100, 100, 100);
-    }
-    main article div h3{
-        display: block;
-    }
-     .burger-menu{
-         display: none;
-     }
-     header .logo{
-         width: 250px;
-         height: 90px;
-     }
+header .header2{
+    display: flex;
+    justify-content:space-evenly;
+    align-items: center;
 }
 
+header .header2 .sub-header{
+    width: 65%;   
+}
+header .logo{
+    width: 200px;
+    height: 90px;
+}
+header .sub-header .search {
+    width:230px;
+    display: flex;
+    justify-content: space-evenly;
+   
+}
+header .sub-header .search .input{
+   border-radius:initial;
+   border: solid 0.5px var(--color-gris-oscuro);
+   height: 20px;
+   width:180px ;
+} 
 
+header .sub-header .search .icon-search{
+    border-radius:initial;
+    border: solid 0.5px var(--color-gris-oscuro) ;
+  height: 20px;
+}
+    header nav {
+        display:flex;
+        gap:50px
+        }
+    header nav ul{
+        width: 100%;
+        display:flex;
+        justify-content: space-evenly;
+    }
+    .burger-menu{
+        display: none;
+    }
 
+    main h2{text-align: left;}
+
+    main section{
+        display: flex;
+       flex-wrap:wrap;
+       justify-content: space-between;
+   }
+    main article{
+        box-shadow: 0 0 10px rgb(100, 100, 100);
+        width:45%;
+        position: relative;
+    }
+   
+  
+    main article div p,main article div p.dto{
+      font-size: 15px;
+      display: flex;
+      justify-content: space-around;
+    }
+main article div i{
+   font-size: 14px;
+   left: 75%;
+}
+}
+  
+@media (min-width: 562px) {
+    main article div i{
+        left:80%;
+        font-size: 15px;
+    }
+}
+
+/* desktop */
+@media (min-width: 768px) {
+header .header2{
+    display: flex ;
+    justify-content: space-evenly;
+}
+header .logo{
+width: 240px;
+}
+header nav{
+    gap:150px
+}
+header nav ul{
+    display: flex;
+    justify-content: space-evenly;
+}
+    main section{
+        display: flex;
+       flex-wrap:nowrap;
+       gap: 25px;
+       
+       }
+       main article div i{
+        left: 75%;
+     }
+    }
